@@ -1,1 +1,124 @@
+  <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>Train times</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+		 <script
+     src="https://code.jquery.com/jquery-3.3.1.js"
+     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		 crossorigin="anonymous"></script>
+		 <script src="assets/javascript/main.js"></script>
+		 		 <link src="assets/images"/>
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script> 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>	 
+ <!-- <script>
+			 // Initialize Firebase
+			 var config = {
+				 apiKey: "AIzaSyBg6JuiAKTGtsDCC-9l6W_yAbBPJ-F3byU",
+				 authDomain: "traintimes-4de46.firebaseapp.com",
+				 databaseURL: "https://traintimes-4de46.firebaseio.com",
+				 projectId: "traintimes-4de46",
+				 storageBucket: "traintimes-4de46.appspot.com",
+				 messagingSenderId: "893312226748"
+			 };
+			 firebase.initializeApp(config);
+		 </script>  -->
+</head>
+
+
+
+
+
+ <body>
+ 
+ <div class="container">
+
+		<div class="jumbotron" style=" color: white">
+	    <h1 class="text-center">Train Scheduler</h1>
+	    <h3 class="text-center">ALL ABOARD!</h3>
+	  </div>
+
+	  <div class="row">
+
+	    <div class="col-lg-12">
+
+			  <!-- Current Schedule-->
+		    <div id=topy class="panel panel-success">
+		      <div class="panel-heading">
+		        <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+		      </div>
+		      <div class="panel-body">
+		        <table class="table table-hover" id='train-table'>
+		          <thead>
+		            <tr>
+		              <th>Train Name</th>
+		              <th>Destination</th>
+		              <th>Frequency (min)</th>
+		              <th>Next Arrival</th>
+		              <th>Minutes Away</th>
+		            </tr>
+		          </thead>
+		          <tbody>
+                        <th id="train-name-display"></th>
+                        <th id="dest-display"></th>
+                        <th id="freq-display"></th>
+                        <th id="nextarrival-display"></th>
+                        <th id="minutesaway-display"></th>
+		          </tbody>
+		        </table>
+		      </div>
+			</div>
+
+			<!-- Add Schedule  -->
+	    <div class="panel panel-success">
+	      <div class="panel-heading">
+	        <h3 class="panel-title"><strong>Add Train</strong></h3>
+	      </div>
+	      <div class="panel-body">
+
+	        <!-- Entry Form -->
+	        <form>
+	          <div class="form-group">
+	            <label for="train-name-input">Train Name</label>
+	            <input class="form-control" id="train-name-input" type="text">
+	          </div>
+	          <div class="form-group">
+	            <label for="dest-input">Destination</label>
+	            <input class="form-control" id="dest-input" type="text">
+	          </div>
+	          <div class="form-group">
+	            <label for="firstTrain-input">First Train Time (HH:mm - military time)</label>
+	            <input class="form-control" id="firstTrain-input" type="text">
+	          </div>
+	          <div class="form-group">
+	            <label for="freq-input">Frequency (min)</label>
+	            <input class="form-control" id="freq-input" type="text">
+	          </div>
+	          <button class="btn btn-success" id="add-train-btn" type="submit">Submit</button>
+	        </form>
+	      </div>
+	    </div>
+	</div>
+
+
+
+
+
+
+  <script src="assets/javascript/basckstretch.js"> </script>
+
+<script type="text/javascript" src="/jquery.backstretch.min.js"></script>;
+
+<script>
+  $.backstretch("/path/to/image.jpg", {speed: 150});
+</script>
+
+	
+ </body>
+ </html>
